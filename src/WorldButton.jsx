@@ -14,7 +14,7 @@ export default function WorldButton() {
         // This is the callback when the proof is received
         console.log('handleVerify', proof);
 
-        const res = await fetch('https://127.0.0.1:8788/verify', {
+        const res = await fetch('https://hello-world-id.pages.dev/verify', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export default function WorldButton() {
 
     const test = async () => {
 
-        const res = await fetch('https://127.0.0.1:8788/helloworld', {
+        const res = await fetch('https://hello-world-id.pages.dev/helloworld', {
             method:"GET",
         });
         const data = await res.json();
