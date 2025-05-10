@@ -2,9 +2,21 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import WorldButton from './WorldButton'
 
 function App() {
   const [count, setCount] = useState(0)
+
+
+  const test = async () => {
+
+    const res = await fetch('http://127.0.0.1:8788/helloworld', {
+        method:"GET",
+    });
+    // const data = await res.json();
+    console.log('Verification result:', res);
+
+}
 
   return (
     <>
@@ -18,9 +30,10 @@ function App() {
       </div>
       <h1>Vite + React + World ID</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={test}>
           count is {count}
         </button>
+        <WorldButton />
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
