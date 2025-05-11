@@ -10,11 +10,12 @@ export default function WorldButton() {
         console.log('onSuccess', result);
     }
 
-    const handleVerify = async (proof) => {
+    const handleVerify = async (proof,signal) => {
         // This is the callback when the proof is received
         console.log('handleVerify', proof);
+        console.log('signal', signal);
 
-        const res = await fetch('https://hello-world-id.pages.dev/verify', {
+        const res = await fetch('http://127.0.0.1:3000/verify', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,15 +29,6 @@ export default function WorldButton() {
     
     }
 
-    const test = async () => {
-
-        const res = await fetch('https://hello-world-id.pages.dev/helloworld', {
-            method:"GET",
-        });
-        const data = await res.json();
-        console.log('Verification result:', data);
-
-    }
 
     return (
 
@@ -49,7 +41,7 @@ export default function WorldButton() {
                 // This is the callback when an error occurs
                 console.error('onError', error);
             }}
-            signal="user_value"
+            signal={"test"}
             verification_level={VerificationLevel.Orb}
         >
             {({ open }) =>
