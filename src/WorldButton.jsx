@@ -1,8 +1,8 @@
 import { IDKitWidget, VerificationLevel } from '@worldcoin/idkit'
-console.log(VerificationLevel)
+// console.log(VerificationLevel)
 // ...
 
-console.log(import.meta.env)
+// console.log(import.meta.env)
 
 export default function WorldButton() {
     const onSuccess = (result) => {
@@ -41,7 +41,6 @@ export default function WorldButton() {
                 // This is the callback when an error occurs
                 console.error('onError', error);
             }}
-            signal={"test"}
             verification_level={VerificationLevel.Orb}
         >
             {({ open }) =>
